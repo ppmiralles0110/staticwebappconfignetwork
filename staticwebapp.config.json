@@ -1,0 +1,19 @@
+{
+  "networking": {
+    "allowedIpRanges": [
+      "203.0.113.42/32",
+      "198.51.100.0/24"
+    ]
+  },
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/css/*", "/images/*.{png,jpg,svg,ico}"]
+  },
+  "responseOverrides": {
+    "404": { "rewrite": "/404.html" }
+  },
+  "globalHeaders": {
+    "X-Content-Type-Options": "nosniff",
+    "Cache-Control": "no-store"
+  }
+}
