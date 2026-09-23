@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IP Restriction Demo — Azure Static Web Apps</title>
+  <style>
+    body { font-family: Segoe UI, system-ui, sans-serif; margin: 3rem auto; max-width: 44rem; color: #242424; line-height: 1.5; padding: 0 1rem; }
+    .card { border: 1px solid #e0e0e0; border-left: 4px solid #107c10; border-radius: 8px; padding: 1.5rem; }
+    code { background: #f5f5f5; padding: .15rem .35rem; border-radius: 4px; }
+    pre { background: #f5f5f5; padding: 1rem; border-radius: 6px; overflow-x: auto; }
+    .muted { color: #616161; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>You're on the allow list</h1>
+    <p>This page is served by <strong>Azure Static Web Apps</strong>. You can see it because your
+    public IP address matches an entry in <code>allowedIpRanges</code>.</p>
+    <p>Every request from an IP outside that list is denied before it ever reaches this file.</p>
+  </div>
+
+  <h2>The rule in force</h2>
+  <pre>{
+  "networking": {
+    "allowedIpRanges": [
+      "203.0.113.42/32",
+      "198.51.100.0/24"
+    ]
+  }
+}</pre>
+
+  <h2>Try it</h2>
+  <ol>
+    <li>Load this page from an allowed network — you get this page.</li>
+    <li>Switch to mobile data or a VPN, then reload — access is denied.</li>
+    <li>Add that second IP to <code>allowedIpRanges</code>, redeploy, reload — you're back in.</li>
+  </ol>
+
+  <p class="muted">Requires the Static Web Apps <strong>Standard</strong> plan. IP blocks use CIDR notation;
+  <code>/32</code> allows exactly one address.</p>
+</body>
+                                                                         </html>
