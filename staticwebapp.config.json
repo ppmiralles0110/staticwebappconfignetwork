@@ -1,9 +1,4 @@
 {
-  "networking": {
-    "allowedIpRanges": [
-      "180.190.0.0/16"
-    ]
-  },
   "navigationFallback": {
     "rewrite": "/index.html",
     "exclude": ["/css/*", "/images/*.{png,jpg,svg,ico}"]
