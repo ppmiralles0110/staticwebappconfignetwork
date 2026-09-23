@@ -1,8 +1,6 @@
 {
-  "networking": {
-    "allowedIpRanges": [
-      "20.97.0.0/16"
-    ]
+  "platform": {
+    "apiRuntime": "node:20"
   },
   "navigationFallback": {
     "rewrite": "/index.html",
