@@ -1,7 +1,7 @@
 {
   "networking": {
     "allowedIpRanges": [
-      "180.190.0.0/16"
+      "20.97.0.0/16"
     ]
   },
   "navigationFallback": {
